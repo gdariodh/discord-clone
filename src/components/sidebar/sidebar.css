@@ -1,3 +1,71 @@
-.main{
-   
+:root {
+  --gray30: #212529;
+  --gray20: #343a40;
+  --gray10: #495057;
+  --gray5: #adb5bd;
+  --green: #20c997;
+  --light: #ffffff;
 }
+
+/* Sidebar general */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  /* q crezca 0.25 -> flex-grow */
+  flex: 0.25;
+  height: 100vh;
+  background-color: var(--gray30);
+}
+
+.sidebar__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 3px solid var(--gray20);
+  color: var(--light);
+}
+
+.sidebar__addChannel:hover,
+.sidebar__expandMore:hover {
+  cursor: pointer;
+}
+
+.sidebar__channel {
+ /* ocupar todo el ancho */
+  flex: 1;
+}
+
+.sidebar__channelsHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: var(--gray5)
+}
+
+.sidebar__header{
+    display: flex;
+    align-items: center;
+}
+
+/* Sidebar Channels component */
+.sidebarChannels:hover{
+    color: var(--green);
+    background-color: var(--gray20);
+}
+
+.sidebarChannels > h4 {
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+    cursor: pointer
+}
+
+/* hacer mas grande los # */
+.sidebarChannel_hash{
+  font-size: 30px;
+  padding: 8px;
+}
+
