@@ -1,13 +1,17 @@
 :root {
-  --gray30: #212529;
+  --gray30: #1b1e22;
   --gray20: #343a40;
   --gray10: #495057;
   --gray5: #adb5bd;
-  --green: #20c997;
+  --green: #37b24d;
   --light: #ffffff;
 }
 
 /* Sidebar general */
+
+body{
+  color: var(--gray10)
+}
 
 .sidebar {
   display: flex;
@@ -23,7 +27,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-bottom: 3px solid var(--gray20);
+  border-bottom: 1px solid var(--gray20);
+  box-shadow: 1px 0px 12px 2px rgba(42, 44, 43, 0.3);
   color: var(--light);
 }
 
@@ -68,4 +73,37 @@
   font-size: 30px;
   padding: 8px;
 }
+
+.sidebar__voice, .sidebar__profile{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--gray20);
+  box-shadow: 1px 0px 12px 2px rgba(42, 44, 43, 0.3);
+
+}
+
+.sidebar__voiceIcon{
+  color: var(--green)
+}
+
+.sidebar__voiceInfo, .sidebar__profileInfo{
+  /* flex 1 para que abarque todo el width q quede disponible y que quede */
+  flex: 1;
+  padding: 10px;
+}
+
+.sidebar__voiceInfo > h3{
+  color: var(--green)
+}
+
+/* dar estilos a iconos de material ui */
+.sidebar__voiceIcons > .MuiSvgIcon-root, .sidebar__profileIcons > .MuiSvgIcon-root{
+  padding: 10px;
+}
+
+.sidebar__profile h3{color: var(--light)}
+
+
+
 
