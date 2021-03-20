@@ -15,8 +15,6 @@ import { Avatar } from "@material-ui/core";
 // components
 import SidebarChannels from "./SidebarChannels";
 
-// FIXME: ME QUEDE EN 1:12 HRS, vamos a crear el chat component
-
 const Sidebar = () => {
   return (
     <>
@@ -58,7 +56,7 @@ const Sidebar = () => {
         </div>
 
         <div className="sidebar__profile">
-        <Avatar src="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"/>
+        <Avatar src="https://www.flaticon.es/svg/vstatic/svg/188/188988.svg?token=exp=1616127009~hmac=07c9b173ede871dbf79d691930760ca5"/>
           <div className="sidebar__profileInfo">
             <h3>gdariodh</h3>
             <p>this is my ID</p>

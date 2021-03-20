@@ -1,0 +1,109 @@
+/* Header component */
+.chatHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    padding: 10px
+}
+
+.chatHeader__left h3{
+    display: flex;
+    align-items: center;
+}
+
+.chatHeader__hash{
+    color: gray;
+    font-size: 30px;
+    padding: 10px
+}
+
+.chatHeader__right{
+    display: flex;
+    align-items: center;
+    flex: 0.5;
+    justify-content: space-between;
+}
+
+/* estilos a los icons material ui */
+.chatHeader__right > .MuiSvgIcon-root{
+    padding: 5px;
+    cursor: pointer
+}
+
+.chatHeader__right > .MuiSvgIcon-root:hover{
+    color: white
+}
+
+/* buscador con icono search */
+.chatHeader__search{
+    display: flex;
+    align-items: center;
+    color: gray;
+    background-color: #2f3135;
+    border-radius: 3px;
+    padding: 3px;
+}
+/* formateamos input */
+.chatHeader__search > input{
+    background: transparent;
+    /* outline-width: 0; pa quitarle el focus de bordes negros :) */
+    outline-width: 0;
+    color: gray;
+    border: none;
+}
+
+/* Chat component */
+.chat{
+    display: flex;
+    flex-direction: column;
+    /* q abarque todo el espacio q pueda */
+    flex: 1;
+    background-color: #22272e;
+    /* abarca todo el alto de la pantalla del dispositivo */
+    height: 100vh;
+}
+
+.chat__messages{
+    /* q abarque todo el espacio q pueda */
+    flex: 1;
+}
+
+.chat__input{
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px;
+    border: 1px solid gray;
+    background-color: #474b53;
+    box-shadow: 1px 0px 12px 2px rgba(42, 44, 43, 0.3);
+}
+
+.chat__input > form{
+    flex: 1;
+}
+
+.chat__input > form > input{
+    background: transparent;
+    /* outline-width: 0; pa quitarle el focus de bordes negros :) */
+    outline-width: 0;
+    width: 100%;
+    padding: 15px;
+    font-size: large;
+    color: white;
+    border: none;
+}
+
+.chat__inputButton{
+    display: none;
+}
+
+.chat__inputIcons > .MuiSvgIcon-root{
+    padding: 5px;
+    cursor: pointer
+}
+
+

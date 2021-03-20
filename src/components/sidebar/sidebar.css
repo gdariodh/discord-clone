@@ -16,8 +16,10 @@ body{
 .sidebar {
   display: flex;
   flex-direction: column;
-  /* q crezca 0.25 -> flex-grow */
-  flex: 0.25;
+  /* q crezca 0.40 -> flex-grow, este flex-grow seria como ponerle un width a la columna
+  la diferencia es que esta se estira dependiendo de la pantalla
+  */
+  flex: 0.40;
   height: 100vh;
   background-color: var(--gray30);
 }
@@ -38,7 +40,7 @@ body{
 }
 
 .sidebar__channel {
- /* ocupar todo el ancho */
+ /* ocupar todo el espacio q pueda */
   flex: 1;
 }
 
@@ -88,7 +90,7 @@ body{
 }
 
 .sidebar__voiceInfo, .sidebar__profileInfo{
-  /* flex 1 para que abarque todo el width q quede disponible y que quede */
+  /* flex 1 para que abarque todo el espacio disponible */
   flex: 1;
   padding: 10px;
 }
