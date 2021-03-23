@@ -6,6 +6,8 @@ import Message from './Message'
 // icons
 import {AddCircle, CardGiftcard, Gif, EmojiEmotions} from '@material-ui/icons'
 
+// FIXME: me quede en el minuto 1:35hrs - estabamos empezando a crear el componente de Message
+
 
 const Chat = () => {
     return ( 
@@ -13,6 +15,8 @@ const Chat = () => {
             <ChatHeader/>
 
             <div className="chat__messages">
+               <Message/>
+               <Message/>
                <Message/>
             </div>
 

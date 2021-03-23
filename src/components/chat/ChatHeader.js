@@ -1,3 +1,4 @@
+import './chatHeader.css'
 // icons
 import {
   Notifications,
