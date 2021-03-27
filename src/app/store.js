@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counterSlice';
+import userReducer from '../features/userSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    user: userReducer,
   },
 });
+
+
+// store hace disponible los diferentes reducer en toda la app
+// de modo que puedas acceder con useSelector desde cualquier lugar de la app
