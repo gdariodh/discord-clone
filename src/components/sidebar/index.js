@@ -56,7 +56,7 @@ const Sidebar = () => {
         </div>
 
         <div className="sidebar__profile">
-        <Avatar src="https://www.flaticon.es/svg/vstatic/svg/188/188988.svg?token=exp=1616127009~hmac=07c9b173ede871dbf79d691930760ca5"/>
+        <Avatar />
           <div className="sidebar__profileInfo">
             <h3>gdariodh</h3>
             <p>this is my ID</p>
