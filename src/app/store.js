@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
+// nombramos como Reducer a los Slice
 import userReducer from '../features/userSlice';
+
+// FIXME: 1:53
 
 export default configureStore({
   reducer: {
-    user: userReducer,
+    user: userReducer
+    // app: appReducer
   },
 });
 
