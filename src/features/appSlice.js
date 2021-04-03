@@ -18,7 +18,9 @@ export const appSlice = createSlice({
 // actions: fns q ejecuta el usuario en la app
 export const { setChannelId } = appSlice.actions;
 
-// exportar y hacer disponible state en diferentes childrens
+// exportar y hacer disponible state en diferentes childrens, para trabajar con useSelector
+
+// state.nameState.InitialStateName
 export const selectChannelId = (state) => state.app.channelId;
 export const selectChannelName = (state) => state.app.channelName;
 

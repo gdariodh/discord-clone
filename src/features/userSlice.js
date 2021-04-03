@@ -18,6 +18,8 @@ export const userSlice = createSlice({
 
 export const { login, logout } = userSlice.actions;
  
+// exportar y hacer disponible state en diferentes childrens, para trabajar con useSelector
+// state.nameState.InitialStateName
 export const selectUser = (state) => state.user.user;
 
 export default userSlice.reducer;
