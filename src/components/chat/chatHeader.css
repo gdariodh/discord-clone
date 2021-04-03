@@ -25,6 +25,12 @@
     justify-content: space-between;
 }
 
+@media screen and (max-width: 768px){
+    .chatHeader__right{
+        display: none;
+    }
+}
+
 /* estilos a los icons material ui */
 .chatHeader__right > .MuiSvgIcon-root{
     padding: 5px;
