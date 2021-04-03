@@ -14,8 +14,15 @@ import {
 import { Avatar } from "@material-ui/core";
 // components
 import SidebarChannels from "./SidebarChannels";
+// redux
+import {selectUser} from '../../features/userSlice'
+import {useSelector} from 'react-redux'
 
 const Sidebar = () => {
+
+  // get user for the photoAvatar
+  const user = useSelector(selectUser)
+
   return (
     <>
       {/* usamos BEM */}
@@ -56,7 +63,7 @@ const Sidebar = () => {
         </div>
 
         <div className="sidebar__profile">
-        <Avatar />
+        <Avatar src={user.photo}/>
           <div className="sidebar__profileInfo">
             <h3>gdariodh</h3>
             <p>this is my ID</p>
