@@ -29,16 +29,20 @@ const Sidebar = () => {
   const [showInput, setShowInput] = useState(false);
   const [channelName, setChannelName] = useState("");
 
+  // FIXME: 2:25
+
   useEffect(() => {
-    db.collection("channels").onSnapshot((snapshot) => {
-      setChannels(
-        // retornar objeto nuevo con esos atributos, doc.data() sirve para sacar la data
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          channel: doc.data(),
-        }))
-      );
-    });
+    db.collection("channels")
+      .orderBy("created", "desc")
+      .onSnapshot((snapshot) => {
+        setChannels(
+          // retornar objeto nuevo con esos atributos, doc.data() sirve para sacar la data
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            channel: doc.data(),
+          }))
+        );
+      });
   }, [showInput]);
 
   const handleShowInput = () => setShowInput(!showInput);
@@ -48,9 +52,12 @@ const Sidebar = () => {
 
     if (!channelName) alert("ChannelName is Required");
 
-    // agregar a firestore el nuevo channel
+    // crear nuevo doc y  agregar a firestore el nuevo channel
     db.collection("channels").add({
       channelName,
+      messages: [],
+      creator: user,
+      created: new Date(),
     });
 
     setShowInput(false);
@@ -101,8 +108,12 @@ const Sidebar = () => {
 
           <div className="sidebar__channelsList">
             {channels &&
-              channels.map((channel, i) => (
-                <SidebarChannels key={`${channel.id}-${i}`} channel={channel} />
+              channels.map((channel, id) => (
+                <SidebarChannels
+                  key={id}
+                  id={id}
+                  channelName={channel.channel.channelName}
+                />
               ))}
           </div>
         </div>
