@@ -63,6 +63,7 @@ const Sidebar = () => {
     setShowInput(false);
   };
 
+
   return (
     <>
       {/* usamos BEM */}
@@ -111,7 +112,7 @@ const Sidebar = () => {
               channels.map((channel, id) => (
                 <SidebarChannels
                   key={id}
-                  id={id}
+                  id={channel.id}
                   channelName={channel.channel.channelName}
                 />
               ))}
