@@ -17,6 +17,7 @@ import SidebarChannels from "./SidebarChannels";
 // redux
 import {selectUser} from '../../features/userSlice'
 import {useSelector} from 'react-redux'
+import { auth } from "../../firebase";
 
 const Sidebar = () => {
 
@@ -65,8 +66,9 @@ const Sidebar = () => {
         <div className="sidebar__profile">
         <Avatar src={user.photo}/>
           <div className="sidebar__profileInfo">
-            <h3>gdariodh</h3>
-            <p>this is my ID</p>
+            <h3>{user.displayName}</h3>
+            {/* cerrar sesion */}
+            <button onClick={() => auth.signOut()}>Logout</button>
           </div>
 
           <div className="sidebar__profileIcons">

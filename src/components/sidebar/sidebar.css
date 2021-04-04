@@ -106,6 +106,20 @@ body{
 
 .sidebar__profile h3{color: var(--light)}
 
+.sidebar__profileInfo > button{
+  padding: 3px 33px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  transition: 1s ease-in;
+}
+
+.sidebar__profileInfo > button:hover{
+  cursor: pointer;
+  background-color: #d6d6d6;
+  box-shadow: 1px 1px 3px 1px rgb(93 93 93 / 40%);
+}
+
 
 
 
