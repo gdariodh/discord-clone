@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 // css component
 import "./sidebar.css";
 // icons
@@ -9,20 +10,36 @@ import {
   Call,
   Mic,
   Headset,
-  Settings
+  Settings,
 } from "@material-ui/icons";
 import { Avatar } from "@material-ui/core";
 // components
 import SidebarChannels from "./SidebarChannels";
 // redux
-import {selectUser} from '../../features/userSlice'
-import {useSelector} from 'react-redux'
+import { selectUser } from "../../features/userSlice";
+import { useSelector } from "react-redux";
 import { auth } from "../../firebase";
+import db from "../../firebase";
 
 const Sidebar = () => {
-
   // get user for the photoAvatar
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUser);
+
+  const [channels, setChannels] = useState([]);
+
+  useEffect(() => {
+    db.collection("channels").onSnapshot((snapshot) => {
+      setChannels(
+        // retornar objeto nuevo con esos atributos, doc.data() sirve para sacar la data
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          channel: doc.data(),
+        }))
+      );
+    });
+  }, []);
+
+  console.log(channels);
 
   return (
     <>
@@ -43,10 +60,8 @@ const Sidebar = () => {
           </div>
 
           <div className="sidebar__channelsList">
-            <SidebarChannels />
-            <SidebarChannels />
-            <SidebarChannels />
-            <SidebarChannels />
+            {channels &&
+              channels.map((channel) => <SidebarChannels channel={channel} />)}
           </div>
         </div>
 
@@ -64,7 +79,7 @@ const Sidebar = () => {
         </div>
 
         <div className="sidebar__profile">
-        <Avatar src={user.photo}/>
+          <Avatar src={user.photo} />
           <div className="sidebar__profileInfo">
             <h3>{user.displayName}</h3>
             {/* cerrar sesion */}
@@ -72,9 +87,9 @@ const Sidebar = () => {
           </div>
 
           <div className="sidebar__profileIcons">
-             <Mic/>
-             <Headset/>
-             <Settings/>
+            <Mic />
+            <Headset />
+            <Settings />
           </div>
         </div>
       </aside>
