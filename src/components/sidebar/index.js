@@ -26,6 +26,8 @@ const Sidebar = () => {
   const user = useSelector(selectUser);
 
   const [channels, setChannels] = useState([]);
+  const [showInput, setShowInput] = useState(false);
+  const [channelName, setChannelName] = useState("");
 
   useEffect(() => {
     db.collection("channels").onSnapshot((snapshot) => {
@@ -37,9 +39,22 @@ const Sidebar = () => {
         }))
       );
     });
-  }, []);
+  }, [showInput]);
 
-  console.log(channels);
+  const handleShowInput = () => setShowInput(!showInput);
+
+  const handleCreateChannel = (e) => {
+    e.preventDefault();
+
+    if (!channelName) alert("ChannelName is Required");
+
+    // agregar a firestore el nuevo channel
+    db.collection("channels").add({
+      channelName,
+    });
+
+    setShowInput(false);
+  };
 
   return (
     <>
@@ -51,17 +66,44 @@ const Sidebar = () => {
         </div>
         <div className="sidebar__channel">
           <div className="sidebar__channelsHeader">
-            <div className="sidebar__header">
-              <ExpandMore className="sidebar__expandMore" />
-              <h4>Text Channels</h4>
-            </div>
-
-            <Add className="sidebar__addChannel" />
+            {showInput ? (
+              <div className="sidebar__headerInput">
+                <ExpandMore
+                  onClick={() => handleShowInput()}
+                  className="sidebar__expandMore"
+                />
+                <form
+                  className="sidebar__headerInput"
+                  onSubmit={(e) => handleCreateChannel(e)}
+                >
+                  <input
+                    onChange={(e) => setChannelName(e.target.value)}
+                    className="sidebar__headerInput1"
+                    type="text"
+                    placeholder={`"Hello world"`}
+                  />
+                  <button type="submit">Add Channel</button>
+                </form>
+              </div>
+            ) : (
+              <>
+                <div className="sidebar__header">
+                  <ExpandMore className="sidebar__expandMore" />
+                  <h4>Text Channels</h4>
+                </div>
+                <Add
+                  onClick={() => handleShowInput()}
+                  className="sidebar__addChannel"
+                />
+              </>
+            )}
           </div>
 
           <div className="sidebar__channelsList">
             {channels &&
-              channels.map((channel) => <SidebarChannels channel={channel} />)}
+              channels.map((channel, i) => (
+                <SidebarChannels key={`${channel.id}-${i}`} channel={channel} />
+              ))}
           </div>
         </div>
 

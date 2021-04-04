@@ -9,8 +9,8 @@
 
 /* Sidebar general */
 
-body{
-  color: var(--gray10)
+body {
+  color: var(--gray10);
 }
 
 .sidebar {
@@ -19,7 +19,7 @@ body{
   /* q crezca 0.40 -> flex-grow, este flex-grow seria como ponerle un width a la columna
   la diferencia es que esta se estira dependiendo de la pantalla
   */
-  flex: 0.40;
+  flex: 0.4;
   height: 100vh;
   background-color: var(--gray30);
 }
@@ -40,86 +40,106 @@ body{
 }
 
 .sidebar__channel {
- /* ocupar todo el espacio q pueda */
+  /* ocupar todo el espacio q pueda */
   flex: 1;
 }
 
-.sidebar__channelsHeader{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    color: var(--gray5)
+.sidebar__channelsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: var(--gray5);
 }
 
-.sidebar__header{
-    display: flex;
-    align-items: center;
+.sidebar__header {
+  display: flex;
+  align-items: center;
 }
 
 /* Sidebar Channels component */
-.sidebarChannels:hover{
-    color: var(--green);
-    background-color: var(--gray20);
+.sidebarChannels:hover {
+  color: var(--green);
+  background-color: var(--gray20);
 }
 
 .sidebarChannels > h4 {
-    display: flex;
-    padding-left: 15px;
-    align-items: center;
-    cursor: pointer
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+  cursor: pointer;
 }
 
 /* hacer mas grande los # */
-.sidebarChannel_hash{
+.sidebarChannel_hash {
   font-size: 30px;
   padding: 8px;
 }
 
-.sidebar__voice, .sidebar__profile{
+.sidebar__voice,
+.sidebar__profile {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--gray20);
   box-shadow: 1px 0px 12px 2px rgba(42, 44, 43, 0.3);
-
 }
 
-.sidebar__voiceIcon{
-  color: var(--green)
+.sidebar__voiceIcon {
+  color: var(--green);
 }
 
-.sidebar__voiceInfo, .sidebar__profileInfo{
+.sidebar__voiceInfo,
+.sidebar__profileInfo {
   /* flex 1 para que abarque todo el espacio disponible */
   flex: 1;
   padding: 10px;
 }
 
-.sidebar__voiceInfo > h3{
-  color: var(--green)
+.sidebar__voiceInfo > h3 {
+  color: var(--green);
 }
 
 /* dar estilos a iconos de material ui */
-.sidebar__voiceIcons > .MuiSvgIcon-root, .sidebar__profileIcons > .MuiSvgIcon-root{
+.sidebar__voiceIcons > .MuiSvgIcon-root,
+.sidebar__profileIcons > .MuiSvgIcon-root {
   padding: 10px;
 }
 
-.sidebar__profile h3{color: var(--light)}
+.sidebar__profile h3 {
+  color: var(--light);
+}
 
-.sidebar__profileInfo > button{
-  padding: 3px 33px;
+.sidebar__profileInfo > button,  .sidebar__headerInput > button{
+  padding: 4px 12px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   outline: none;
-  transition: 1s ease-in;
+  transition: .5s ease-in;
+  font-weight: bold;
+  background-color: var(--gray5);
 }
 
-.sidebar__profileInfo > button:hover{
+.sidebar__profileInfo > button:hover, .sidebar__headerInput > button:hover {
   cursor: pointer;
-  background-color: #d6d6d6;
-  box-shadow: 1px 1px 3px 1px rgb(93 93 93 / 40%);
+  background-color: #8d8d8d;
+  box-shadow: 1px 1px 4px 1px rgb(93 93 93 / 60%);
 }
 
+/* input -> create channel */
 
+.sidebar__headerInput {
+  display: flex;
+  align-items: center;
+}
 
-
+.sidebar__headerInput1 {
+  padding: 8px;
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  border-bottom: 2px solid var(--gray20);
+  background-color: var(--gray30);
+  box-shadow: 1px 0px 12px 2px rgb(42 44 43 / 30%);
+  color: white;
+}
