@@ -50,8 +50,8 @@ const Sidebar = () => {
   const handleCreateChannel = (e) => {
     e.preventDefault();
 
-    if (!channelName) alert("ChannelName is Required");
-
+    if (!channelName) return alert("ChannelName is Required");
+   
     // crear nuevo doc y  agregar a firestore el nuevo channel
     db.collection("channels").add({
       channelName,

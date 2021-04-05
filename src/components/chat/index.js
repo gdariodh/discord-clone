@@ -50,7 +50,7 @@ const Chat = () => {
   const sendMessage = (e) => {
     e.preventDefault();
 
-    if (!input) alert("Type a message :)");
+    if (!input) return alert("Type a message :)");
 
     // agregar el nuevo mensaje a la subCollection "messages"
     db.collection("channels").doc(channelId).collection("messages").add({
