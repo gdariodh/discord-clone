@@ -9,14 +9,15 @@ export const appSlice = createSlice({
   },
   // altera o modifica initialState
   reducers: {
-    setChannelId: (state, action) => {
-      state.app += action.payload;
+    setChannelInfo: (state, action) => {
+      state.channelId = action.payload.channelId
+      state.channelName = action.payload.channelName
     },
   },
 });
 
 // actions: fns q ejecuta el usuario en la app
-export const { setChannelId } = appSlice.actions;
+export const { setChannelInfo } = appSlice.actions;
 
 // exportar y hacer disponible state en diferentes childrens, para trabajar con useSelector
 
