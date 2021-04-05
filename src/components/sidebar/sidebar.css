@@ -42,6 +42,8 @@ body {
 .sidebar__channel {
   /* ocupar todo el espacio q pueda */
   flex: 1;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .sidebar__channelsHeader {
@@ -57,6 +59,24 @@ body {
   align-items: center;
 }
 
+/* input -> create channel */
+
+.sidebar__headerInput {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__headerInput1 {
+  padding: 8px;
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  border-bottom: 2px solid var(--gray20);
+  background-color: var(--gray30);
+  box-shadow: 1px 0px 12px 2px rgb(42 44 43 / 30%);
+  color: white;
+}
+
 /* Sidebar Channels component */
 .sidebarChannels:hover {
   color: var(--green);
@@ -68,6 +88,7 @@ body {
   padding-left: 15px;
   align-items: center;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 /* hacer mas grande los # */
@@ -110,36 +131,20 @@ body {
   color: var(--light);
 }
 
-.sidebar__profileInfo > button,  .sidebar__headerInput > button{
+.sidebar__profileInfo > button,
+.sidebar__headerInput > button {
   padding: 4px 12px;
   border: none;
   border-radius: 5px;
   outline: none;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
   font-weight: bold;
   background-color: var(--gray5);
 }
 
-.sidebar__profileInfo > button:hover, .sidebar__headerInput > button:hover {
+.sidebar__profileInfo > button:hover,
+.sidebar__headerInput > button:hover {
   cursor: pointer;
   background-color: #8d8d8d;
   box-shadow: 1px 1px 4px 1px rgb(93 93 93 / 60%);
-}
-
-/* input -> create channel */
-
-.sidebar__headerInput {
-  display: flex;
-  align-items: center;
-}
-
-.sidebar__headerInput1 {
-  padding: 8px;
-  outline: none;
-  border: none;
-  margin-right: 10px;
-  border-bottom: 2px solid var(--gray20);
-  background-color: var(--gray30);
-  box-shadow: 1px 0px 12px 2px rgb(42 44 43 / 30%);
-  color: white;
 }

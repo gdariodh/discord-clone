@@ -5,6 +5,10 @@
     color: white;
 }
 
+.message h4{
+    color: var(--gray5);
+}
+
 .message__info{
     margin-left: 20px;
 }
