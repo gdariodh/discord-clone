@@ -55,12 +55,12 @@ const Sidebar = () => {
     // crear nuevo doc y  agregar a firestore el nuevo channel
     db.collection("channels").add({
       channelName,
-      messages: [],
       creator: user,
       created: new Date(),
     });
 
     setShowInput(false);
+    setChannelName("")
   };
 
 
