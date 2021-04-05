@@ -9,13 +9,18 @@ import {
   HelpRounded,
 } from "@material-ui/icons";
 
-const ChatHeader = () => {
+
+const ChatHeader = ({channelName}) => {
+
   return (
     <div className="chatHeader">
       <div className="chatHeader__left">
-        <h3>
-          <span className="chatHeader__hash">#</span>Youtube
-        </h3>
+      {
+        channelName ? <h3>
+          <span className="chatHeader__hash">#</span>{channelName}
+        </h3> : <h3>Select a channel</h3>
+      }
+       
       </div>
       <div className="chatHeader__right">
         <Notifications />
