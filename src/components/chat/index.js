@@ -62,8 +62,6 @@ const Chat = () => {
     // TODO: si no existe la subCollection de message, la crea y le agrega el nuevo mensaje :)
 
     setInput("");
-
-    console.log(messages);
   };
 
   return (
@@ -73,12 +71,10 @@ const Chat = () => {
           <ChatHeader channelName={channelName} />
 
           <div className="chat__messages">
-            {messages.length > 0 && messages.map((message, id) => (
-              <Message
-                key={id}
-                message={message}
-              />
-            ))}
+            {messages.length > 0 &&
+              messages.map((message, id) => (
+                <Message key={id} message={message} />
+              ))}
           </div>
 
           <div className="chat__input">
