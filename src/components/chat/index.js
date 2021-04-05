@@ -37,8 +37,8 @@ const Chat = () => {
         .doc(channelId)
         // nos vamos a la subCollection "messages" de la collection "channels"
         .collection("messages")
-        // ordenamos por fecha de entrada
-        .orderBy("timestamp", "desc")
+        // ordenamos por fecha de entrada de forma ascendente, esto es optional, pq por defecto viene como asc
+        .orderBy("timestamp", "asc")
         // accedemos a la info
         .onSnapshot((snapshot) =>
           // add data al state, doc.data() accede a la data
